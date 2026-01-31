@@ -36,13 +36,13 @@ This repository demonstrates how to wire up Google Gemini Live with Pipecat and 
 cd server
 cp env.example .env
 # Edit .env and set:
-# - DAILY_API_KEY (required) - or DAILY_SAMPLE_ROOM_URL for local dev
+# - DAILY_API_KEY (required) - or DAILY_ROOM_URL for local dev
 # - GOOGLE_API_KEY (required)
 uv sync
 uv run bot.py --transport daily
 ```
 
-**Note:** If you set `DAILY_API_KEY`, rooms will be created dynamically and no sample room URL is needed. Alternatively, you can set `DAILY_SAMPLE_ROOM_URL` to join the bot to a specific room repeatedly for local development.
+**Note:** If you set `DAILY_API_KEY`, rooms will be created dynamically and no sample room URL is needed. Alternatively, you can set `DAILY_ROOM_URL` to join the bot to a specific room repeatedly for local development.
 
 This starts the local WebRTC server. Keep it running.
 
