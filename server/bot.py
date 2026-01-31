@@ -1,5 +1,5 @@
 #
-# Copyright (c) 2024–2025, Daily
+# Copyright (c) 2024–2026, Daily
 #
 # SPDX-License-Identifier: BSD 2-Clause License
 #
@@ -33,7 +33,6 @@ from pipecat.pipeline.runner import PipelineRunner
 from pipecat.pipeline.task import PipelineParams, PipelineTask
 from pipecat.processors.aggregators.llm_context import LLMContext
 from pipecat.processors.aggregators.llm_response_universal import LLMContextAggregatorPair
-from pipecat.processors.frameworks.rtvi import RTVIObserver, RTVIProcessor
 from pipecat.runner.types import RunnerArguments
 from pipecat.runner.utils import create_transport
 from pipecat.services.google.gemini_live.llm import GeminiLiveLLMService, InputParams
@@ -74,7 +73,6 @@ async def run_bot(transport: BaseTransport, runner_args: RunnerArguments):
     Sets up and runs the bot pipeline including:
     - Gemini Live multimodal model integration
     - Voice activity detection
-    - RTVI event handling
     """
 
     # Initialize the Gemini Multimodal Live model
@@ -98,13 +96,9 @@ async def run_bot(transport: BaseTransport, runner_args: RunnerArguments):
     context = LLMContext(messages)
     user_aggregator, assistant_aggregator = LLMContextAggregatorPair(context)
 
-    # RTVI events for Pipecat client UI
-    rtvi = RTVIProcessor()
-
     pipeline = Pipeline(
         [
             transport.input(),
-            rtvi,
             user_aggregator,
             llm,
             transport.output(),
@@ -118,7 +112,6 @@ async def run_bot(transport: BaseTransport, runner_args: RunnerArguments):
             enable_metrics=True,
             enable_usage_metrics=True,
         ),
-        observers=[RTVIObserver(rtvi)],
     )
 
     @transport.event_handler("on_client_connected")
