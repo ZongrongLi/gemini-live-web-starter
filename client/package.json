@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "next": "15.1.6",
@@ -20,10 +21,14 @@
     "@pipecat-ai/client-js": "latest",
     "@pipecat-ai/client-react": "latest",
     "@pipecat-ai/voice-ui-kit": "latest",
+    "@pipecat-ai/daily-transport": "latest",
+    "@pipecat-ai/small-webrtc-transport": "latest",
     "@tailwindcss/postcss": "latest",
     "postcss": "latest"
   },
   "devDependencies": {
+    "eslint": "latest",
+    "eslint-config-next": "15.1.6",
     "tailwindcss": "latest",
     "typescript": "latest",
     "@types/node": "latest",
