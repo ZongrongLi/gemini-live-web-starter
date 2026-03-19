@@ -1,0 +1,3 @@
+pipecat-ai[google,daily]
+python-dotenv
+aiohttp
