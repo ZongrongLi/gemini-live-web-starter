@@ -9,8 +9,8 @@
   },
   "dependencies": {
     "next": "15.1.9",
-    "react": "19.0.1",
-    "react-dom": "19.0.1",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
     "lucide-react": "latest",
     "framer-motion": "latest",
     "clsx": "latest",
@@ -21,12 +21,12 @@
     "@pipecat-ai/client-react": "latest",
     "@pipecat-ai/voice-ui-kit": "latest",
     "@pipecat-ai/daily-transport": "latest",
-    "@pipecat-ai/small-webrtc-transport": "latest"
+    "@pipecat-ai/small-webrtc-transport": "latest",
+    "tailwindcss": "latest",
+    "@tailwindcss/postcss": "latest",
+    "postcss": "latest"
   },
   "devDependencies": {
-    "tailwindcss": "^3.4.1",
-    "postcss": "^8.4.31",
-    "autoprefixer": "^10.4.16",
     "typescript": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
