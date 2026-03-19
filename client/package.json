@@ -15,8 +15,10 @@
     "framer-motion": "latest",
     "clsx": "latest",
     "tailwind-merge": "latest",
-    "daily-js": "latest",
-    "@daily-co/daily-react": "latest"
+    "@daily-co/daily-js": "latest",
+    "@daily-co/daily-react": "latest",
+    "@pipecat-ai/client-js": "latest",
+    "@pipecat-ai/client-react": "latest"
   },
   "devDependencies": {
     "postcss": "latest",
