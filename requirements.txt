@@ -1,6 +1,10 @@
-pipecat-ai[google,daily]
+pipecat-ai[google,daily,silero]
+google-genai
+aiortc
+uvloop
 fastapi
 uvicorn
 python-dotenv
 aiohttp
 loguru
+pipecat-ai-small-webrtc-prebuilt

@@ -164,8 +164,17 @@ async def bot(runner_args: RunnerArguments):
 
     await run_bot(transport, runner_args)
 
-
+# 确保文件最底部长这样，不要有任何多余的空格
 if __name__ == "__main__":
+    import os
+    import sys
     from pipecat.runner.run import main
 
-    main()
+    # 强制开启全网监听，解决 connection refused
+    os.environ["HOST"] = "0.0.0.0"
+    os.environ["PORT"] = "7860"
+    
+    # 强制注入启动参数，双重保险
+    sys.argv.extend(["--host", "0.0.0.0", "--port", "7860"])
+
+    main()  # 注意：这一行前面有 4 个空格！
